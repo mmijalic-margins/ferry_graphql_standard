@@ -5,5 +5,5 @@ import 'package:standard/graphql/queries/models/film.data.gql.dart';
 
 abstract class FilmsRepo {
   // repo that fetches all films
-  Future<Either<Exception, GAllFilmsData?>> generateRoadblocksGame();
+  Future<Either<Exception, GAllFilmsData?>> fetchFilms();
 }

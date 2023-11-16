@@ -4,6 +4,7 @@ import 'dart:developer';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:standard/app/services/service_locator.dart';
+import 'package:standard/graphql/graphql_client.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();

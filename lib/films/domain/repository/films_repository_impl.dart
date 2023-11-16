@@ -12,14 +12,14 @@ class FilmsRepoImpl implements FilmsRepo {
   final FilmsSource _filmsSource;
 
   @override
-  Future<Either<Exception, GAllFilmsData?>> generateRoadblocksGame() async {
+  Future<Either<Exception, GAllFilmsData?>> fetchFilms() async {
     try {
       final result = await _filmsSource.fetchFilms();
 
       return Right(result);
     } catch (e) {
       logError(e);
-      return Left(e as Exception);
+      return Left(Exception('test'));
     }
   }
 }

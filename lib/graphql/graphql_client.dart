@@ -1,3 +1,5 @@
+// ignore_for_file: join_return_with_assignment
+
 import 'package:ferry/ferry.dart';
 import 'package:gql_http_link/gql_http_link.dart';
 import 'package:injectable/injectable.dart';
@@ -5,14 +7,16 @@ import 'package:injectable/injectable.dart';
 @singleton
 class GraphQLClass {
   GraphQLClass() {
-    final link = HttpLink(
-      'https://lucidity-cr-a7285af3439d.herokuapp.com/graphql',
-    );
-    initClient(link: link);
+    initClient();
   }
-  Future<Client> initClient({required HttpLink link}) async {
-    final client = Client(
+  Future<Client> initClient() async {
+    final link = HttpLink(
+      'https://swapi-graphql.netlify.app/.netlify/functions/index',
+    );
+    final cache = Cache(store: MemoryStore());
+    client = Client(
       link: link,
+      cache: cache,
       defaultFetchPolicies: {
         OperationType.query: FetchPolicy.CacheAndNetwork,
       },
