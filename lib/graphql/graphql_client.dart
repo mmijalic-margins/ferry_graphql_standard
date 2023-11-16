@@ -4,14 +4,22 @@ import 'package:injectable/injectable.dart';
 
 @singleton
 class GraphQLClass {
-  Future<Client> initClient() async {
-    final link =
-        HttpLink('https://swapi-graphql.netlify.app/.netlify/functions/index');
-
+  GraphQLClass() {
+    final link = HttpLink(
+      'https://lucidity-cr-a7285af3439d.herokuapp.com/graphql',
+    );
+    initClient(link: link);
+  }
+  Future<Client> initClient({required HttpLink link}) async {
     final client = Client(
       link: link,
+      defaultFetchPolicies: {
+        OperationType.query: FetchPolicy.CacheAndNetwork,
+      },
     );
 
     return client;
   }
+
+  late Client client;
 }

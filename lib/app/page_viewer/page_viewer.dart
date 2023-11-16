@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:standard/films/presentation/screens/films_page.dart';
 
 class PageViewer extends StatelessWidget {
   const PageViewer({super.key});
@@ -6,9 +7,7 @@ class PageViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Hello world'),
-      ),
+      body: FilmsPage(),
     );
   }
 }
