@@ -24,7 +24,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
-
+  WidgetsFlutterBinding.ensureInitialized();
   Bloc.observer = const AppBlocObserver();
 
   await runZonedGuarded(

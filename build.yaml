@@ -4,8 +4,10 @@ targets:
       ferry_generator|graphql_builder:
         enabled: true
         options:
-          schema: standard|lib/schema.graphql
+          schema: standard|lib/graphql/schema.graphql
+          output_dir: "models"
       ferry_generator|serializer_builder:
         enabled: true
         options:
-          schema: standard|lib/schema.graphql
+          schema: standard|lib/graphql/schema.graphql
+          output_dir: "models"
