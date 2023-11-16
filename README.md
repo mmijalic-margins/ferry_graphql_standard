@@ -1,0 +1,1 @@
+# ferry_graphql_standard
