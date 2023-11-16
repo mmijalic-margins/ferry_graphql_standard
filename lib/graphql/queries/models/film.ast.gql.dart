@@ -17,50 +17,6 @@ const AllFilms = _i1.OperationDefinitionNode(
       directives: [],
       selectionSet: _i1.SelectionSetNode(selections: [
         _i1.FieldNode(
-          name: _i1.NameNode(value: 'edges'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'cursor'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'node'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: _i1.SelectionSetNode(selections: [
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'created'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'director'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-                _i1.FieldNode(
-                  name: _i1.NameNode(value: 'title'),
-                  alias: null,
-                  arguments: [],
-                  directives: [],
-                  selectionSet: null,
-                ),
-              ]),
-            ),
-          ]),
-        ),
-        _i1.FieldNode(
           name: _i1.NameNode(value: 'films'),
           alias: null,
           arguments: [],
@@ -87,37 +43,8 @@ const AllFilms = _i1.OperationDefinitionNode(
               directives: [],
               selectionSet: null,
             ),
-          ]),
-        ),
-        _i1.FieldNode(
-          name: _i1.NameNode(value: 'pageInfo'),
-          alias: null,
-          arguments: [],
-          directives: [],
-          selectionSet: _i1.SelectionSetNode(selections: [
             _i1.FieldNode(
-              name: _i1.NameNode(value: 'hasNextPage'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'endCursor'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'hasPreviousPage'),
-              alias: null,
-              arguments: [],
-              directives: [],
-              selectionSet: null,
-            ),
-            _i1.FieldNode(
-              name: _i1.NameNode(value: 'startCursor'),
+              name: _i1.NameNode(value: 'id'),
               alias: null,
               arguments: [],
               directives: [],

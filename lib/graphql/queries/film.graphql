@@ -1,23 +1,10 @@
 query AllFilms {
   allFilms {
-    edges {
-      cursor
-      node {
-        created
-        director
-        title
-      }
-    }
     films {
       created
       director
       title
-    }
-    pageInfo {
-      hasNextPage
-      endCursor
-      hasPreviousPage
-      startCursor
+      id
     }
     totalCount
   }

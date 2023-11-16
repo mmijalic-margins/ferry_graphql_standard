@@ -26,10 +26,10 @@ class FilmsPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return ListTile(
                       title:
-                          Text(filmData.allFilms!.films![index]!.title ?? ''),
+                          Text(filmData.allFilms?.films?[index]?.title ?? ''),
                     );
                   },
-                  itemCount: filmData.allFilms!.films!.length,
+                  itemCount: filmData.allFilms?.totalCount ?? 0,
                 ),
               );
             },

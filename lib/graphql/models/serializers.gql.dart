@@ -8,13 +8,7 @@ import 'package:ferry_exec/ferry_exec.dart';
 import 'package:gql_code_builder/src/serializers/operation_serializer.dart'
     show OperationSerializer;
 import 'package:standard/graphql/queries/models/film.data.gql.dart'
-    show
-        GAllFilmsData,
-        GAllFilmsData_allFilms,
-        GAllFilmsData_allFilms_edges,
-        GAllFilmsData_allFilms_edges_node,
-        GAllFilmsData_allFilms_films,
-        GAllFilmsData_allFilms_pageInfo;
+    show GAllFilmsData, GAllFilmsData_allFilms, GAllFilmsData_allFilms_films;
 import 'package:standard/graphql/queries/models/film.req.gql.dart'
     show GAllFilmsReq;
 import 'package:standard/graphql/queries/models/film.var.gql.dart'
@@ -28,10 +22,7 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
 @SerializersFor([
   GAllFilmsData,
   GAllFilmsData_allFilms,
-  GAllFilmsData_allFilms_edges,
-  GAllFilmsData_allFilms_edges_node,
   GAllFilmsData_allFilms_films,
-  GAllFilmsData_allFilms_pageInfo,
   GAllFilmsReq,
   GAllFilmsVars,
 ])

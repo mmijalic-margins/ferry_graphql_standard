@@ -3,9 +3,11 @@
 import 'package:ferry/ferry.dart';
 import 'package:gql_http_link/gql_http_link.dart';
 import 'package:injectable/injectable.dart';
+import 'package:isar/isar.dart';
 import 'package:loggy/loggy.dart';
 
 @singleton
+@collection
 class GraphQLClass {
   GraphQLClass() {
     initClient();
@@ -14,13 +16,8 @@ class GraphQLClass {
     final link = HttpLink(
       'https://swapi-graphql.netlify.app/.netlify/functions/index',
     );
-    final cache = Cache(store: MemoryStore());
     client = Client(
       link: link,
-      cache: cache,
-      defaultFetchPolicies: {
-        OperationType.query: FetchPolicy.CacheAndNetwork,
-      },
     );
 
     return client;
