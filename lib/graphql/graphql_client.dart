@@ -7,7 +7,6 @@ import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:loggy/loggy.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:standard/graphql/queries/models/film.data.gql.dart';
 
 @singleton
 class GraphQLClass {
@@ -44,14 +43,16 @@ class GraphQLClass {
     required OperationRequest request,
   }) async {
     dynamic returnable;
-    logInfo('REQUEST SENT: $request');
+    // request sent with timeout of 7 seconds with error handeling
+    // for timeout only
     final dataSource = await client.request(request).timeout(
       const Duration(seconds: 7),
       onTimeout: (value) {
         throw Exception('Timeout Exception');
       },
     ).first;
-
+    logInfo('REQUEST SENT: $request');
+    // looking into graphql errors, link exceptions etc...
     if (dataSource.hasErrors == true) {
       if (dataSource.graphqlErrors != null) {
         if (dataSource.graphqlErrors!.isNotEmpty) {
@@ -70,6 +71,7 @@ class GraphQLClass {
     return returnable;
   }
 
+  // function witch reads query from cache ( whole query )
   Future<dynamic> readQueryFromCache({
     required OperationRequest request,
   }) async {
@@ -81,11 +83,13 @@ class GraphQLClass {
     }
   }
 
+// function that clears thw whole cache
   Future<void> clearCache() async {
     logInfo('CLEAR ALL QUERY FROM CACHE');
     client.cache.clear();
   }
 
+//function that clears specific cache
   Future<void> clearSpecificCache({
     required dynamic mainData,
   }) async {

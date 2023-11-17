@@ -11,13 +11,15 @@ class FilmsSource {
       : _graphQLClass = graphQLClass;
 // source that generates roadblocks game
   Future<GAllFilmsData?> fetchFilms() async {
-    final reviewsReq = GAllFilmsReq(
+    //all request end with REQ, b is build where variables can be added
+    final filmsReq = GAllFilmsReq(
       (b) => b,
     );
-    final returnable = await _graphQLClass.requestQuery(request: reviewsReq);
+    // call graphql client to request processing of the Query
+    final returnable = await _graphQLClass.requestQuery(request: filmsReq);
     //could be used for getting specific field through the app
     final cacheReading =
-        await _graphQLClass.readQueryFromCache(request: reviewsReq);
+        await _graphQLClass.readQueryFromCache(request: filmsReq);
 
     return returnable as GAllFilmsData;
   }

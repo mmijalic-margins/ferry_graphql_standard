@@ -12,12 +12,14 @@ class PeopleSource {
       : _graphQLClass = graphQLClass;
 // source that generates roadblocks game
   Future<GAllPeopleData?> fetchPeople() async {
-    final reviewsReq = GAllPeopleReq(
+    // request that has variables ( vars.first ), and special policy
+    // that only ever uses Network version
+    final peopleReq = GAllPeopleReq(
       (b) => b
         ..vars.first = 20
         ..fetchPolicy = FetchPolicy.NetworkOnly,
     );
-    final returnable = await _graphQLClass.requestQuery(request: reviewsReq);
+    final returnable = await _graphQLClass.requestQuery(request: peopleReq);
 
     return returnable as GAllPeopleData;
   }

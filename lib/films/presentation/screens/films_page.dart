@@ -11,9 +11,7 @@ class FilmsPage extends StatelessWidget {
     return BlocProvider.value(
       value: sl<FetchFilmsCubit>()..fetchFilms(),
       child: BlocConsumer<FetchFilmsCubit, FetchFilmsState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           return state.when(
             initial: SizedBox.new,

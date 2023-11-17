@@ -11,9 +11,7 @@ class PeoplePage extends StatelessWidget {
     return BlocProvider.value(
       value: sl<FetchPeopleCubit>()..fetchPeople(),
       child: BlocConsumer<FetchPeopleCubit, FetchPeopleState>(
-        listener: (context, state) {
-          // TODO: implement listener
-        },
+        listener: (context, state) {},
         builder: (context, state) {
           return state.when(
             initial: SizedBox.new,
