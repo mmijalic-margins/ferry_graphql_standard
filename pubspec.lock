@@ -265,6 +265,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.8.1"
+  ferry_hive_store:
+    dependency: "direct main"
+    description:
+      name: ferry_hive_store
+      sha256: b8b5737ef35e0368527b3f2f72e0981f80c01c00bf974b0c3b959baf996960b0
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.5.1"
   ferry_store:
     dependency: transitive
     description:
@@ -409,7 +417,7 @@ packages:
     source: hosted
     version: "2.3.1"
   hive:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: hive
       sha256: "8dcf6db979d7933da8217edcec84e9df1bdb4e4edc7fc77dbd5aa74356d6d941"
