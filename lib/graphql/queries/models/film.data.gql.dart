@@ -5,7 +5,6 @@
 import 'package:built_collection/built_collection.dart';
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
-
 import 'package:standard/graphql/models/serializers.gql.dart' as _i1;
 
 part 'film.data.gql.g.dart';

@@ -13,6 +13,16 @@ import 'package:standard/graphql/queries/models/film.req.gql.dart'
     show GAllFilmsReq;
 import 'package:standard/graphql/queries/models/film.var.gql.dart'
     show GAllFilmsVars;
+import 'package:standard/graphql/queries/models/people.data.gql.dart'
+    show
+        GAllPeopleData,
+        GAllPeopleData_allPeople,
+        GAllPeopleData_allPeople_pageInfo,
+        GAllPeopleData_allPeople_people;
+import 'package:standard/graphql/queries/models/people.req.gql.dart'
+    show GAllPeopleReq;
+import 'package:standard/graphql/queries/models/people.var.gql.dart'
+    show GAllPeopleVars;
 
 part 'serializers.gql.g.dart';
 
@@ -25,5 +35,11 @@ final SerializersBuilder _serializersBuilder = _$serializers.toBuilder()
   GAllFilmsData_allFilms_films,
   GAllFilmsReq,
   GAllFilmsVars,
+  GAllPeopleData,
+  GAllPeopleData_allPeople,
+  GAllPeopleData_allPeople_pageInfo,
+  GAllPeopleData_allPeople_people,
+  GAllPeopleReq,
+  GAllPeopleVars,
 ])
 final Serializers serializers = _serializersBuilder.build();

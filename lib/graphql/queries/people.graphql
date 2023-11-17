@@ -1,0 +1,11 @@
+query AllPeople($first: Int, $last: Int) {
+  allPeople(first: $first, last: $last) {
+    people {
+      name
+    }
+    totalCount
+    pageInfo {
+      hasNextPage
+    }
+  }
+}

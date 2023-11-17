@@ -19,7 +19,7 @@ class FilmsRepoImpl implements FilmsRepo {
       return Right(result);
     } catch (e) {
       logError(e);
-      return Left(Exception('test'));
+      return Left(Exception(e));
     }
   }
 }
