@@ -1,11 +1,13 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:standard/graphql/queries/models/people.data.gql.dart';
 import 'package:standard/people/data/repository/people.repository.dart';
 
 part 'fetch_people_state.dart';
 part 'fetch_people_cubit.freezed.dart';
 
+@singleton
 class FetchPeopleCubit extends Cubit<FetchPeopleState> {
   FetchPeopleCubit({required PeopleRepo peopleRepo})
       : _peopleRepo = peopleRepo,

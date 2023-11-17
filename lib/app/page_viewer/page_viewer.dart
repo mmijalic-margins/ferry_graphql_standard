@@ -8,7 +8,7 @@ class PageViewer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Scaffold(
         appBar: AppBar(
           centerTitle: true,
@@ -17,7 +17,6 @@ class PageViewer extends StatelessWidget {
             tabs: [
               Tab(text: 'Tab Film'),
               Tab(text: 'Tab People'),
-              Tab(text: 'Tab Ships'),
             ],
           ),
         ),
@@ -25,7 +24,6 @@ class PageViewer extends StatelessWidget {
           children: [
             FilmsPage(),
             PeoplePage(),
-            FilmsPage(),
           ],
         ),
       ),

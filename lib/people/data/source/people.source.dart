@@ -11,9 +11,7 @@ class PeopleSource {
       : _graphQLClass = graphQLClass;
 // source that generates roadblocks game
   Future<GAllPeopleData?> fetchPeople() async {
-    final reviewsReq = GAllPeopleReq(
-      (b) => b,
-    );
+    final reviewsReq = GAllPeopleReq((b) => b..vars.first = 20);
     final returnable = await _graphQLClass.requestQuery(request: reviewsReq);
 
     return returnable as GAllPeopleData;

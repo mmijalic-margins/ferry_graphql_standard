@@ -30,7 +30,7 @@ class PeoplePage extends StatelessWidget {
                       ),
                     );
                   },
-                  itemCount: peopleData.allPeople?.totalCount ?? 0,
+                  itemCount: peopleData.allPeople?.people?.length ?? 0,
                 ),
               );
             },
