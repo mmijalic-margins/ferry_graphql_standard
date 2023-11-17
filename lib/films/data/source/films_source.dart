@@ -15,6 +15,9 @@ class FilmsSource {
       (b) => b,
     );
     final returnable = await _graphQLClass.requestQuery(request: reviewsReq);
+    //could be used for getting specific field through the app
+    final cacheReading =
+        await _graphQLClass.readQueryFromCache(request: reviewsReq);
 
     return returnable as GAllFilmsData;
   }

@@ -1,6 +1,7 @@
 query AllPeople($first: Int, $last: Int) {
   allPeople(first: $first, last: $last) {
     people {
+      id
       name
     }
     totalCount

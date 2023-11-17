@@ -84,6 +84,7 @@ abstract class GAllPeopleData_allPeople_people
 
   @BuiltValueField(wireName: '__typename')
   String get G__typename;
+  String get id;
   String? get name;
   static Serializer<GAllPeopleData_allPeople_people> get serializer =>
       _$gAllPeopleDataAllPeoplePeopleSerializer;

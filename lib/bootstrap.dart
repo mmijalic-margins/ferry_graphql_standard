@@ -4,6 +4,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/widgets.dart';
 import 'package:loggy/loggy.dart';
 import 'package:standard/app/services/service_locator.dart';
+import 'package:standard/graphql/graphql_client.dart';
 
 class AppBlocObserver extends BlocObserver {
   const AppBlocObserver();
@@ -27,6 +28,7 @@ Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
   };
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
+  await sl<GraphQLClass>().initClient();
   Loggy.initLoggy();
   Bloc.observer = const AppBlocObserver();
 

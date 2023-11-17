@@ -169,6 +169,8 @@ class _$GAllPeopleData_allPeople_peopleSerializer
       '__typename',
       serializers.serialize(object.G__typename,
           specifiedType: const FullType(String)),
+      'id',
+      serializers.serialize(object.id, specifiedType: const FullType(String)),
     ];
     Object? value;
     value = object.name;
@@ -195,6 +197,10 @@ class _$GAllPeopleData_allPeople_peopleSerializer
       switch (key) {
         case '__typename':
           result.G__typename = serializers.deserialize(value,
+              specifiedType: const FullType(String))! as String;
+          break;
+        case 'id':
+          result.id = serializers.deserialize(value,
               specifiedType: const FullType(String))! as String;
           break;
         case 'name':
@@ -531,16 +537,21 @@ class _$GAllPeopleData_allPeople_people
   @override
   final String G__typename;
   @override
+  final String id;
+  @override
   final String? name;
 
   factory _$GAllPeopleData_allPeople_people(
           [void Function(GAllPeopleData_allPeople_peopleBuilder)? updates]) =>
       (new GAllPeopleData_allPeople_peopleBuilder()..update(updates))._build();
 
-  _$GAllPeopleData_allPeople_people._({required this.G__typename, this.name})
+  _$GAllPeopleData_allPeople_people._(
+      {required this.G__typename, required this.id, this.name})
       : super._() {
     BuiltValueNullFieldError.checkNotNull(
         G__typename, r'GAllPeopleData_allPeople_people', 'G__typename');
+    BuiltValueNullFieldError.checkNotNull(
+        id, r'GAllPeopleData_allPeople_people', 'id');
   }
 
   @override
@@ -557,6 +568,7 @@ class _$GAllPeopleData_allPeople_people
     if (identical(other, this)) return true;
     return other is GAllPeopleData_allPeople_people &&
         G__typename == other.G__typename &&
+        id == other.id &&
         name == other.name;
   }
 
@@ -564,6 +576,7 @@ class _$GAllPeopleData_allPeople_people
   int get hashCode {
     var _$hash = 0;
     _$hash = $jc(_$hash, G__typename.hashCode);
+    _$hash = $jc(_$hash, id.hashCode);
     _$hash = $jc(_$hash, name.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -573,6 +586,7 @@ class _$GAllPeopleData_allPeople_people
   String toString() {
     return (newBuiltValueToStringHelper(r'GAllPeopleData_allPeople_people')
           ..add('G__typename', G__typename)
+          ..add('id', id)
           ..add('name', name))
         .toString();
   }
@@ -588,6 +602,10 @@ class GAllPeopleData_allPeople_peopleBuilder
   String? get G__typename => _$this._G__typename;
   set G__typename(String? G__typename) => _$this._G__typename = G__typename;
 
+  String? _id;
+  String? get id => _$this._id;
+  set id(String? id) => _$this._id = id;
+
   String? _name;
   String? get name => _$this._name;
   set name(String? name) => _$this._name = name;
@@ -600,6 +618,7 @@ class GAllPeopleData_allPeople_peopleBuilder
     final $v = _$v;
     if ($v != null) {
       _G__typename = $v.G__typename;
+      _id = $v.id;
       _name = $v.name;
       _$v = null;
     }
@@ -625,6 +644,8 @@ class GAllPeopleData_allPeople_peopleBuilder
         new _$GAllPeopleData_allPeople_people._(
             G__typename: BuiltValueNullFieldError.checkNotNull(
                 G__typename, r'GAllPeopleData_allPeople_people', 'G__typename'),
+            id: BuiltValueNullFieldError.checkNotNull(
+                id, r'GAllPeopleData_allPeople_people', 'id'),
             name: name);
     replace(_$result);
     return _$result;

@@ -24,9 +24,14 @@ class FilmsPage extends StatelessWidget {
               return Center(
                 child: ListView.builder(
                   itemBuilder: (context, index) {
-                    return ListTile(
-                      title:
-                          Text(filmData.allFilms?.films?[index]?.title ?? ''),
+                    return InkWell(
+                      onTap: () {
+                        sl<FetchFilmsCubit>().removeCache(data: filmData);
+                      },
+                      child: ListTile(
+                        title:
+                            Text(filmData.allFilms?.films?[index]?.title ?? ''),
+                      ),
                     );
                   },
                   itemCount: filmData.allFilms?.totalCount ?? 0,

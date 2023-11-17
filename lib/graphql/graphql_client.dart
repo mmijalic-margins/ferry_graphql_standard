@@ -7,6 +7,7 @@ import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:loggy/loggy.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:standard/graphql/queries/models/film.data.gql.dart';
 
 @singleton
 class GraphQLClass {
@@ -32,6 +33,7 @@ class GraphQLClass {
       cache: cache,
       defaultFetchPolicies: {
         OperationType.query: FetchPolicy.CacheAndNetwork,
+        OperationType.mutation: FetchPolicy.NetworkOnly,
       },
     );
 
@@ -66,6 +68,36 @@ class GraphQLClass {
       returnable = dataSource.data;
     }
     return returnable;
+  }
+
+  Future<dynamic> readQueryFromCache({
+    required OperationRequest request,
+  }) async {
+    dynamic returnable;
+    logInfo('READ QUERY FROM CACHE: $request');
+    returnable = client.cache.readQuery(request);
+    if (returnable != null) {
+      return returnable;
+    }
+  }
+
+  Future<void> clearCache() async {
+    logInfo('CLEAR ALL QUERY FROM CACHE');
+    client.cache.clear();
+  }
+
+  Future<void> clearSpecificCache({
+    required dynamic mainData,
+  }) async {
+    final keys = client.cache.store.keys;
+    for (final key in keys) {
+      if (key.contains('Film')) {
+        logInfo('Clear: $key');
+        client.cache.evict(key);
+      }
+    }
+    client.cache.evict('Query');
+    logInfo('CLEAR SPECIFIC FROM CACHE');
   }
 
   late Client client;
