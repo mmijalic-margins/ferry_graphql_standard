@@ -28,10 +28,10 @@ class FetchFilmsCubit extends Cubit<FetchFilmsState> {
     });
   }
 
-  Future<void> removeCache({required GAllFilmsData data}) async {
+  Future<void> removeCache() async {
     emit(const FetchFilmsState.loading());
     final graphql = sl<GraphQLClass>();
-    await graphql.clearSpecificCache(mainData: data);
+    await graphql.clearSpecificCache(mainKey: 'Film');
     await fetchFilms();
   }
 

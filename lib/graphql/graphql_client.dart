@@ -91,11 +91,11 @@ class GraphQLClass {
 
 //function that clears specific cache
   Future<void> clearSpecificCache({
-    required dynamic mainData,
+    required String mainKey,
   }) async {
     final keys = client.cache.store.keys;
     for (final key in keys) {
-      if (key.contains('Film')) {
+      if (key.contains(mainKey)) {
         logInfo('Clear: $key');
         client.cache.evict(key);
       }

@@ -24,7 +24,7 @@ class FilmsPage extends StatelessWidget {
                   itemBuilder: (context, index) {
                     return InkWell(
                       onTap: () {
-                        sl<FetchFilmsCubit>().removeCache(data: filmData);
+                        sl<FetchFilmsCubit>().removeCache();
                       },
                       child: ListTile(
                         title:
